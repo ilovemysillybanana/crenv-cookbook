@@ -13,7 +13,7 @@ default['crenv']['upgrade'] = 'none'
 default['crenv']['user_installs'] = []
 
 #extra system wide tunables
-default['crenv']['root_path'] = '/usr/local/crenv'
+default['crenv']['root_path'] = '.crenv' #each user gets it in a home folder, inside a folder with this name
 
 #shards to install for versions/users
 default['crenv']['shards'] = {}
