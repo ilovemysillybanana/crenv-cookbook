@@ -16,7 +16,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[crenv::default]
+      - recipe[test::default]
     verifier:
       inspec_tests:
         - test/recipes

@@ -8,12 +8,13 @@ default['crenv']['update_repo'] = 'https://github.com/pine/crenv-update.git'
 
 #upgrade crenv
 default['crenv']['upgrade'] = 'none'
+default['crenv']['crystal-version'] = '0.20.0'
 
 #user hash, for each to have a rbenv installation
-default['crenv']['user_installs'] = []
+default['crenv']['user_installs'] = [{'username' => 'crenv', 'version' => '0.20.0', 'dir' => '/home/crenv/'}]
 
 #extra system wide tunables
-default['crenv']['root_path'] = '.crenv' #each user gets it in a home folder, inside a folder with this name
+default['crenv']['install_path'] = '/home/crenv/.crenv' #each user gets it in a home folder, inside a folder with this name
 
 #shards to install for versions/users
 default['crenv']['shards'] = {}
