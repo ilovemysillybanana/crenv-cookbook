@@ -7,13 +7,20 @@ property :update_repo, String, default: node['crenv']['update_repo']
 property :update, [String, NilClass, TrueClass, FalseClass], default: node['crenv']['upgrade']
 property :crenv_users, [String, Array, Hash, NilClass], default: node['crenv']['user_installs']
 property :install_path, String, default: node['crenv']['install_path']
-property :plugins, String, default: node['crenv']['plugins']
+property :crystal_version, String, default: node['crenv']['crystal-version']
+property :plugins, [String, Hash, NilClass], default: node['crenv']['plugins']
 property :user_plugin, [Hash, Array, NilClass], default: node['crenv']['user_plugins']
 property :profile, [TrueClass, FalseClass, NilClass], default: node['crenv']['create_profiled']
 
 default_action :install
 
 action :install do
+
+  if node['platform_family'] == 'rhel'
+    include_recipe 'build-essential::default'
+    include_recipe 'git::default'
+  end
+
   git install_path+'.crenv' do
     repository git_url
     revision git_ref
@@ -48,7 +55,19 @@ action :install do
       end
     end
     action :run
+    notifies :run, 'bash[install crystal]', :immediately
     not_if { node['crenv']['create_profiled'] == false }
+  end
+
+  bash 'install crystal' do
+    code <<~HEREDOC
+    source #{install_path}.bashrc
+    crenv install #{crystal_version}
+    crenv global #{crystal_version}
+    HEREDOC
+    user crenv_users
+    environment ({'HOME' => install_path, 'USER' => crenv_users })
+    action :nothing
   end
 end
 

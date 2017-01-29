@@ -11,12 +11,19 @@ verifier:
 
 platforms:
   - name: ubuntu-16.04
- #- name: centos-7.2
+  - name: centos-7.1
 
 suites:
-  - name: default
+  - name: single
     run_list:
-      - recipe[test::default]
+      - recipe[single::default]
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes:
+  - name: multiple
+    run_list:
+      - recipe[multiple::default]
     verifier:
       inspec_tests:
         - test/recipes

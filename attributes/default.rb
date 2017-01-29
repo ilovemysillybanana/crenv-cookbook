@@ -26,3 +26,4 @@ default['crenv']['user_plugins'] = []
 
 #create the user profile.d shell script
 default['crenv']['create_profiled'] = true
+default['build-essential']['compile_time'] = true

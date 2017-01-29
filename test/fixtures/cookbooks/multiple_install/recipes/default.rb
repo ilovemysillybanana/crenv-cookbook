@@ -23,6 +23,7 @@ end
 
 crenv_install 'v1.1.0' do
   crenv_users 'crenv'
+  crystal_version '0.20.0'
   install_path '/home/crenv/'
   action :install
 end
