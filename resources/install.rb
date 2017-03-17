@@ -8,7 +8,7 @@ property :update, [String, NilClass, TrueClass, FalseClass], default: node['cren
 property :crenv_users, [String, Array, Hash, NilClass], default: node['crenv']['user_installs']
 property :install_path, String, default: node['crenv']['install_path']
 property :crystal_version, String, default: node['crenv']['crystal-version']
-property :plugins, [String, Hash, NilClass], default: node['crenv']['plugins']
+property :plugins, [Hash, Hash, NilClass], default: node['crenv']['plugins']
 property :user_plugin, [Hash, Array, NilClass], default: node['crenv']['user_plugins']
 property :profile, [TrueClass, FalseClass, NilClass], default: node['crenv']['create_profiled']
 

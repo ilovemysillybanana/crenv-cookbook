@@ -3,4 +3,4 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-include_recipe 'build-essential::default'
+Chef::Log.warn('The default crenv recipe does nothing. See the readme for information on using the crenv resources')

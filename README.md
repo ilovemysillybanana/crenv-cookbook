@@ -13,3 +13,7 @@ All other Debian or RHEL linux distros are assumed to work. If you find an issue
 
 ## Dependencies
 * Chef 12.5+
+
+## Features
+* Install various versions for different users
+* Uninstall specific versions for users
