@@ -4,7 +4,7 @@ maintainer_email 'ilovemysillybanana@gmail.com'
 license 'Apache 2.0'
 description 'Installs/Configures crenv'
 long_description 'Installs/Configures crenv'
-version '0.1.1'
+version '1.0.0'
 
 depends 'yum',   '~> 4.0.0'
 depends 'yum-epel', '~> 1.0.0'
