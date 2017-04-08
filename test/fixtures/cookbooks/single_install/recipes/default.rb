@@ -1,5 +1,3 @@
-include_recipe 'git::default'
-
 group 'crenv' do
   gid '1234'
   action :create
@@ -25,7 +23,6 @@ end
 
 crenv_install 'v1.1.0' do
   crenv_users 'crenv'
-  crystal_version '0.20.0'
-  install_path '/home/crenv/'
+  crystal_version ['0.20.0']
   action :install
 end

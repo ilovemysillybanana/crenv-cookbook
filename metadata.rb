@@ -14,5 +14,5 @@ depends 'git', '~> 5.0.0'
 depends 'build-essential', '~> 7.0.3'
 
 
-issues_url 'https://github.com/ilovemysillybanana/crenv-cookbook' if respond_to?(:issues_url)
-source_url 'https://github.com/ilovemysillybanana/crenv-cookbook/issues' if respond_to?(:source_url)
+source_url 'https://github.com/ilovemysillybanana/crenv-cookbook' if respond_to?(:source_url)
+issues_url 'https://github.com/ilovemysillybanana/crenv-cookbook/issues' if respond_to?(:issues_url)

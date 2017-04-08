@@ -24,14 +24,14 @@ suites:
       inspec_tests:
         - test/recipes
     attributes:
-  - name: multiple
-    driver_config:
-      network:
-        - ["forwarded_port", {guest: 8080, host: 8002}]
-        - ["private_network", {ip: "192.168.33.2"}]
-    run_list:
-      - recipe[multiple::default]
-    verifier:
-      inspec_tests:
-        - test/recipes
-    attributes:
+  # - name: multiple
+  #   driver_config:
+  #     network:
+  #       - ["forwarded_port", {guest: 8080, host: 8002}]
+  #       - ["private_network", {ip: "192.168.33.2"}]
+  #   run_list:
+  #     - recipe[multiple::default]
+  #   verifier:
+  #     inspec_tests:
+  #       - test/recipes
+  #   attributes:
